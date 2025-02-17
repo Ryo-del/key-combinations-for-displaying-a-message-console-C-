@@ -1,0 +1,22 @@
+#include <iostream>
+#include <conio.h> // Для работы с консолями Windows
+
+int main() {
+    std::cout << "Press 'Ctrl+E' to see the message..." << std::endl;
+
+    while (true) {
+        if (_kbhit()) { // Проверяем, была ли нажата клавиша
+            char ch = _getch(); // Получаем символ с клавиатуры
+
+            if (ch == 5) { // Если это Ctrl+E (ASCII 5)
+                std::cout << "Hello" << std::endl;
+            }
+
+            if (ch == 3) { // Если это Ctrl+C (выход)
+                break;
+            }
+        }
+    }
+
+    return 0;
+}
